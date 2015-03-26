@@ -9,15 +9,15 @@ This project has two parts: defining the database schema (SQL table definitions)
 
 Running Instruction:
 
-1. VirtualBox: 
+1.VirtualBox: 
 
 This modele runs on a configured Vagrant VM. Make sure VirtualBox platform package is installed on your operating system, in order to run the Vagrant. You do not need to launch VirtualBox after installing it.
 
-2. Vagrant: 
+2.Install Vagrant: 
 
 Vagrant is the software that configures the VM and lets you share files between your host computer and the VM's filesystem.  Download it from vagrantup.com. Install the version for your operating system.
 
-3. Configure the VM:
+3.Configure the VM:
 
 Use Git to fetch the VM configuration
 
