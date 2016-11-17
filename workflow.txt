@@ -1,0 +1,37 @@
+players:
+id	name
+
+matches:
+id	result
+
+def registerPlayer(name):
+	sql = "INSERT INTO players (name) VALUES (%s);"
+	cursor.execute(sql,(name,))
+
+// player_id	player_name		wins	matches
+
+
+def reportMatch(winner, loser):
+	cursor.execute( "insert into matches(id, result) values (%s, 1)", winner)
+	cursor.execute( "insert into matches(id, result) values (%s, 0)", loser)
+
+
+def playerStandings():
+	sql = select 
+	players.id, player.name, COALESCE(SUM(matches.result) , 0) AS wins, COALESCE(COUNT(matches.result), 0) AS matches from players left join matches on players.id = matches.id
+	group by players.id
+	order by wins DESC;
+	cursor.execute(sql)
+	result = cursor.fetchall()
+	return result
+	// a list of entries, with attributes
+	// player_id	player_name		wins	matches
+
+def swissPairings():
+	standing = playerStandings()
+	for i in range(1, len(standings), 2)
+		standings[i-1][0], standings[i-1][1], standings[i][0], standings[i][1]
+
+	i = 1: player 0 & player 1
+	standings[0][0] (player 0 id), standings[0][1](player 0 name), standings[1][0] (player 1 id), standings[1][1] (player 1 name)
+	i = 3: player 2 & player 3
